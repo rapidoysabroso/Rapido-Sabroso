@@ -1,0 +1,59 @@
+{
+    "productos": [
+        {
+            "id": "Vacuna",
+            "titulo": "Sanguche Vacuna",
+            "descripcion": "Jamón, Queso, Lechuga y Tomate.",
+            "carpeta": "Vacuna",
+            "imagenes": {
+                "principal": "vacuna-completa.avif",
+                "item": "vacuna.avif",
+                "texto": "textos-vacuna.avif"
+            }
+        },
+        {
+            "id": "Pollo",
+            "titulo": "Sanguche Pollo",
+            "descripcion": "Cordero, cebolla caramelizada, queso pimienta, panceta ahumada, rúcula y alioli.",
+            "carpeta": "Pollo",
+            "imagenes": {
+                "principal": "pollo-completa.avif",
+                "item": "pollo.avif",
+                "texto": "textos-pollo.avif"
+            }
+        },
+        {
+            "id": "Merluza",
+            "titulo": "Sanguche Merluza",
+            "descripcion": "Cordero, cebolla caramelizada, queso pimienta, panceta ahumada, rúcula y alioli.",
+            "carpeta": "Merluza",
+            "imagenes": {
+                "principal": "merluza-completa.avif",
+                "item": "merluza.avif",
+                "texto": "textos-merluza.avif"
+            }
+        },
+        {
+            "id": "Pancho",
+            "titulo": "Pancho",
+            "descripcion": "Pan pancho y salchicha.",
+            "carpeta": "Pancho",
+            "imagenes": {
+                "principal": "pancho-completa.avif",
+                "item": "pancho.avif",
+                "texto": "textos-pancho.avif"
+            }
+        },
+        {
+            "id": "Fritas",
+            "titulo": "Cono Fritas",
+            "descripcion": "Pan pancho y salchicha.",
+            "carpeta": "Fritas",
+            "imagenes": {
+                "principal": "fritas-completa.avif",
+                "item": "fritas.avif",
+                "texto": "textos-fritas.avif"
+            }
+        }
+    ]
+}

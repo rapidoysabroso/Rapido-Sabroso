@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cumen Truck!">
+    <link rel="shortcut icon" href="Imagenes/favicon.avif">
+    <title>Sobre Nosotros - Cumen Truck</title>
+    <link id="stylePage" rel="stylesheet" href="styles2.css"> <!-- Asegúrate de enlazar tu CSS -->
+    <link rel="stylesheet" href="animaciones.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Imagenes/logo-transparente.avif" alt="">
+        </div>
+        <p>¡El buen sabor!</p>
+        <!-- <h1>Sobre Nosotros</h1> -->
+        <div class="menu-container">
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+            <nav class="menu">
+                <ul>
+                    <li id="page"><a href="index.html">Comidas</a></li>
+                    <li><a href="bebidas.html">Bebidas</a></li>
+                    <!-- <li><a href="about.html">Nosotros</a></li> -->
+                    <!-- <li><a href="#contacto">Contacto</a></li> -->
+                    <!-- <li id="page"><a href="about.html">Nosotros</a></li> -->
+                    <!-- <li><a href="bebidas.html">Bebidas</a></li> -->
+                    <!-- <li><a href="about.html">Nosotros</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="historia">
+        <div class="hero">
+            <!-- <img src="https://drive.google.com/thumbnail?id=1YZXo3GZ2YbBhlp6sXreHzNA2yd54bq8z&sz=w4000" alt="Cumen Truck"> -->
+            <img id="about" alt="Cumen Truck" class="zoom-image">
+        </div>
+        <div class="content">
+            <h2>Nuestra Historia</h2>
+            <p class="nHistoria" id="historia">
+                <!-- En Cumen Truck, nos apasiona ofrecer comida deliciosa y auténtica que deleite a nuestros clientes. Desde nuestros comienzos, hemos trabajado con dedicación para crear un menú que combina ingredientes frescos y recetas tradicionales con un toque moderno. -->
+            </p>
+            <p class="compromiso" id="compromiso">
+                <!-- Nuestro compromiso con la calidad y el sabor nos ha convertido en una referencia en la escena gastronómica local. Nos esforzamos por brindar una experiencia única, tanto en sabor como en servicio. -->
+            </p>
+        </div>
+        </div>
+        <div class="content" id="equipo">
+            <h2>El Equipo</h2>
+            <p class="equipo" id="equipo">
+                <!-- Detrás de cada platillo hay un equipo apasionado y comprometido con la excelencia: -->
+            </p>
+            <div class="team">
+                <div class="team-member">
+                    <img src="Imagenes/team/carmen-noemi.avif" alt="Fundador">
+                    <div class="info">
+                        <a href="https://www.instagram.com/carmencorderook/" target="_blank"><h3 title="Visitar Instagram de Carmen Noemi Cordero">Carmen Cordero</h3></a>
+                        <p class="des">Fundador y chef principal</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="Imagenes/team/juan-carlos.avif" alt="Coordinador">
+                    <div class="info">
+                        <a href="https://www.instagram.com/juancarlos.barbosa.562/" target="_blank"><h3 title="Visitar Instagram de Juan Carlos Barbosa">Juan Carlos Barbosa</h3></a>
+                        <p class="des">Fundador y chef secundario</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="Imagenes/team/diego-martin.avif" alt="Marketing">
+                    <div class="info">
+                        <a href="https://www.instagram.com/taylor_bundy/" target="_blank"><h3 title="Visitar Instagram de Diego Martín Barbosa">Diego Martín Barbosa</h3></a>
+                        <p class="des">Supervisor de Cocina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer-area">
+        <div class="back">
+            <button id="myBtn2" title="Volver Atrás"></button>
+        </div>
+        <p>Síguenos en:</p>
+        <a href="https://www.facebook.com/cumen.truck" target="_blank"><img src="Imagenes/facebook.svg" alt="Facebook" class="ImgSocial" id="Facebook" onmouseover="Titulos()"></a>
+        <a href="https://www.instagram.com/cumen.truck/" target="_blank"><img src="Imagenes/instagram.avif" alt="Instagram" class="ImgSocial" id="Instagram" onmouseover="Titulos()"></a>
+    </footer>
+    <!-- <script type="text/javascript" src="script.js"></script> -->
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script>
+        const cargarYEjecutarFuncion = () => {
+            const script = document.createElement('script');
+            script.src = 'script.js';
+            script.onload = () => {
+                try {
+                    if (plataforma2.includes('Android') || plataforma2.includes('Win')) {
+                        if (typeof creaTop === 'function') creaTop();
+                        if (typeof scrollFunction === 'function') scrollFunction();
+                    }
+                    if (typeof CargaAbout === 'function') CargaAbout();
+                    if (typeof creaLoginForm === 'function') creaLoginForm();
+                    if (typeof creaSpecialBtn === 'function') creaSpecialBtn();
+                    if (typeof show === 'function') show();
+                    
+                    if (typeof buscarDescripcion2 === 'function') {
+                        //const descripcion = await buscarDescripcion2(historia.id.toLowerCase(), 'descripciones', 'descripciones');
+                        //console.log(descripcion);
+                        //historia.textContent = descripcion;
+                        miFuncionAsync();
+                    };
+                } catch (error) {
+                    console.error('Error al ejecutar funciones:', error);
+                }
+            };
+            script.onerror = () => console.error('No se pudo cargar el script:', script.src);
+            document.head.appendChild(script);
+        };
+
+        const GoBack = () => {
+            //if (navigator.userAgent.includes('Android') && window.location.pathname.includes('about')) {
+            if (window.location.pathname.includes('about')) {
+                if (window.history.length > 1) window.history.back();
+                else console.log('No hay historial disponible.');
+            }
+        };
+
+        async function miFuncionAsync() {
+            const descripcion = await buscarDescripcion2(historia.id.toLowerCase(), 'descripciones', 'descripciones');
+            const descripcion2 = await buscarDescripcion2(compromiso.id.toLowerCase(), 'descripciones', 'descripciones');
+            const descripcion3 = await buscarDescripcion2(equipo.id.toLowerCase(), 'descripciones', 'descripciones');
+            historia.textContent = descripcion;
+            compromiso.textContent = descripcion2;
+            equipo.textContent = descripcion3;
+            //console.log("Inicio de la función async...");
+            //await new Promise(resolve => setTimeout(resolve, 2000)); // Simula un delay de 2 segundos
+            //console.log("Fin de la función async");
+        ;}
+
+        /* const isBottomOfPage2 = () => {
+            return window.scrollY + window.innerHeight >= document.documentElement.scrollHeight;
+        };
+
+        const menuVisible = () => {
+            const menu = document.querySelector(".menu");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                if (menu.classList.value === 'menu active') {
+                    menu.classList.remove('active');
+                }
+                if (isBottomOfPage2()) {
+                    if (menu.classList.value === 'menu') {
+                        menu.classList.add('active');
+                    }
+                }
+            } else {
+                if (menu.classList.value === 'menu') {
+                    menu.classList.add('active');
+                }
+            }
+        }; */
+        const historia = document.querySelector('.nHistoria');
+        const compromiso = document.querySelector('.compromiso');
+        const equipo = document.querySelector('.equipo');
+        const plataforma2 = navigator.userAgent;
+        const imageContainer = document.querySelector('.hero');
+        const image = document.querySelector('.zoom-image');
+        const imageUrl = 'https://drive.google.com/thumbnail?id=1UfPrutLsxYQr52bRgDICUiTtRvd07ylU&sz=w1280';
+        if (plataforma2.includes('Win')) {
+            //window.addEventListener("scroll", menuVisible);
+            imageContainer.addEventListener('click', () => {
+                imageContainer.classList.toggle('active');
+            });
+        } else if (plataforma2.includes('Android')) {
+            image.addEventListener('click', () => {
+                window.open(imageUrl, '_blank'); // Abrir en una nueva pestaña
+            });
+            //cargarYEjecutarFuncion();
+        }
+        document.getElementById("myBtn2").addEventListener("click", GoBack);
+        cargarYEjecutarFuncion();
+        //window.onscroll = menuVisible;
+    </script>
+</body>
+</html>

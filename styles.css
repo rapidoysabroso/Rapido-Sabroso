@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+header {
+  height: 132px;
+  /* background-image: radial-gradient(#ffb931, #ff6100); */
+  background-image: radial-gradient(#b0110c, #000);
+  /* color: #c1ff72; */
+  color: #ff8924;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+.logo {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  /* opacity: 0.8; */
+  /* animation: heartbeat2 1.5s ease-in-out 4; */
+}
+.logo img {
+  position: relative;
+}
+header h1 {
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 2;
+  top: -20px;
+  -webkit-text-stroke: 1px #333;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+header p {
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 7;
+  font-weight: bold;
+  top: 67px;
+  /* -webkit-text-stroke: 0.5px #7ba842; */
+  -webkit-text-stroke: 0.5px #66391e;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+.menu-container {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  align-items: center;
+  position: absolute;
+  padding: 0 2rem;
+  height: 40px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+.menu-toggle:hover {
+  transform: scale(1.05);
+  /* color: #444; */
+  color: #a31010;
+}
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  width: 200px;
+  z-index: 10;
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  border-bottom: 1px solid #444;
+}
+.menu li:last-child {
+  border-bottom: none;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.menu a:hover {
+  background-color: #555;
+  border-radius: 5px;
+  transform: scale(1.01);
+  font-weight: bold;
+}
+.menu.active {
+  display: flex;
+  right: 2rem;
+}
+.menu.inactive {
+  display: none;
+}
+main {
+  background-repeat: no-repeat;
+}
+.menu-section {
+  /* background-image: radial-gradient(#ffb931, #ff6100); */
+  background-image: radial-gradient(#b0110c, #000);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.menu-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+}
+.menu-item img {
+  width: 100%;
+  height: auto;
+}
+.FondoImg {
+  display: none;
+}
+/* .Burguer {
+    background-image: url('Imagenes/burguer-completa.webp');
+} */
+.Img1 {
+  position: relative;
+  display: none;
+}
+.Img2 {
+  position: relative;
+  display: none;
+}
+.menu-item h3 {
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 30px;
+}
+.menu-item p {
+  padding: 0 1rem;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 75px;
+}
+.menu-item .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* color: #f8b400; */
+  color: #b0110c;
+  /* text-shadow: 2px 2px 2px rgba(167, 121, 0, 1); */
+  text-shadow: 2px 2px 2px #402929;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+}
+.nodo-img-item {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  top: 8px;
+}
+.nodo-img-item img {
+  position: relative;
+  width: 17%;
+  animation: heartbeat 1.5s ease-in-out 5;
+}
+/* #myBtn {
+    display: none; Hidden by default
+    position: fixed; Fixed/sticky position
+    bottom: 20px; Place the button at the bottom of the page
+    right: 30px; Place the button 30px from the right
+    z-index: 99; Make sure it does not overlap
+    border: none; Remove borders
+    outline: none; Remove outline
+    background-color: red; Set a background color
+    color: white; Text color
+    cursor: pointer; Add a mouse pointer on hover
+    padding: 15px; Some padding
+    border-radius: 10px; Rounded corners
+    font-size: 18px; Increase font size
+  }
+  #myBtn:hover {
+    background-color: #555; Add a dark-grey background on hover
+  } */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+footer a {
+  color: #f8b400;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.hidden2 {
+  display: none;
+  visibility: collapse;
+}
+#toggleMobileView.active2 {
+  position: absolute;
+  display: flex;
+  background: #333333eb url("Imagenes/celu_1.avif") no-repeat center/cover;
+  visibility: visible;
+  border: none;
+  padding: 20px;
+  opacity: 0.3;
+}
+#toggleMobileView.active2:hover {
+  background: #333333eb url("Imagenes/celu_2.avif") no-repeat center/cover;
+  opacity: 0.8;
+}
+.ImgSocial {
+  width: 30px;
+  height: 30px;
+}
+
+video {
+  width: 80%;
+  height: 80%;
+  left: 0;
+  right: 0;
+  top: 5px;
+  bottom: 0;
+  margin: auto;
+  background: none;
+  position: absolute;
+  opacity: 0.5;
+}
+.cabecera {
+  position: relative;
+  background-image: url("Imagenes/logo-transparente.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 30px;
+}
+/* Estilos para el pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.popup-content {
+  position: relative;
+  background-image: radial-gradient(rgb(255, 185, 49), rgb(255, 97, 0));
+  margin: 10% auto;
+  padding: 10px 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 1px 1px 5px rgb(0 0 0 / 60%), -1px -1px 5px rgb(0 0 0 / 60%);
+}
+.close-btn {
+  position: relative;
+  background-image: url("Imagenes/close.avif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  padding: 15px;
+  background-color: #444;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #333;
+  transform: scale(1.05);
+}
+.login-form {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  margin-top: 0;
+  color: #444;
+}
+
+.login-form label {
+  display: block;
+  color: #c1ff72;
+  -webkit-text-stroke: 0.5px #7ba842;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+.login-form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+.login-form input:hover {
+  transform: scale(1.02);
+}
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 97, 0, 1) 0%,
+    rgba(255, 185, 49, 1) 50%
+  );
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.login-form button:hover {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 97, 0, 1),
+    rgba(255, 185, 49, 1)
+  );
+  transform: scale(1.02);
+}
