@@ -3,7 +3,7 @@
         {
             "id": "Vacuna",
             "titulo": "Sanguche Vacuna",
-            "descripcion": "Jamón, Queso, Lechuga y Tomate.",
+            "descripcion": "Milanesa de carne vacuna, Jamón, Queso, Lechuga y Tomate.",
             "carpeta": "Vacuna",
             "imagenes": {
                 "principal": "vacuna-completa.avif",
@@ -14,7 +14,7 @@
         {
             "id": "Pollo",
             "titulo": "Sanguche Pollo",
-            "descripcion": "Cordero, cebolla caramelizada, queso pimienta, panceta ahumada, rúcula y alioli.",
+            "descripcion": "Milanesa de Pollo, Jamón, Queso, Lechuga y Tomate.",
             "carpeta": "Pollo",
             "imagenes": {
                 "principal": "pollo-completa.avif",
@@ -25,7 +25,7 @@
         {
             "id": "Merluza",
             "titulo": "Sanguche Merluza",
-            "descripcion": "Cordero, cebolla caramelizada, queso pimienta, panceta ahumada, rúcula y alioli.",
+            "descripcion": "Milanesa de Merluza, Jamón, Queso, Lechuga y Tomate.",
             "carpeta": "Merluza",
             "imagenes": {
                 "principal": "merluza-completa.avif",
@@ -47,7 +47,7 @@
         {
             "id": "Fritas",
             "titulo": "Cono Fritas",
-            "descripcion": "Pan pancho y salchicha.",
+            "descripcion": "Cono de Papas Fritas.",
             "carpeta": "Fritas",
             "imagenes": {
                 "principal": "fritas-completa.avif",

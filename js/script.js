@@ -197,11 +197,9 @@ let classi = "";
 //al cargar el documento
 document.addEventListener("DOMContentLoaded", () => {
   //cargarImg();
-  cargarProductos();
-  //por cada elemento dentro de la constante "price", realizamos la busqueda del "id"
-  //dentro del array "precios".
-  //una vez localizado el ID del elemento, dentro del array PRICE, colocamos el valor del mismo
-  //dentro del "TEXTCONTENT" del elemento.
+  if (["index"].some((path) => window.location.pathname.includes(path))) {
+    cargarProductos();
+  }
   const price = document.querySelectorAll(".price");
   price.forEach((element) => {
     (async () => {
@@ -213,6 +211,22 @@ document.addEventListener("DOMContentLoaded", () => {
       element.textContent = "$" + descripcion;
     })();
   });
+  //por cada elemento dentro de la constante "price", realizamos la busqueda del "id"
+  //dentro del array "precios".
+  //una vez localizado el ID del elemento, dentro del array PRICE, colocamos el valor del mismo
+  //dentro del "TEXTCONTENT" del elemento.
+  //   const price = document.querySelectorAll(".price");
+  //   price.forEach((element) => {
+  //     (async () => {
+  //       const descripcion = await buscarDescripcion2(
+  //         element.id.toLowerCase(),
+  //         "precios",
+  //         "precios"
+  //       ); // Cambiar a otro identificador para probar
+  //       element.textContent = "$" + descripcion;
+  //     })();
+  //   });
+
   if (esMovil()) {
     console.log("es movil");
     if (window.location.pathname.includes("about")) {
@@ -221,148 +235,149 @@ document.addEventListener("DOMContentLoaded", () => {
       creaTop();
     }
     //creaTop();
-    const mybutton = document.getElementById("myBtn");
-    const contenedor = document.getElementById("menu-section");
-    const menuItems = document.querySelectorAll(".menu-item");
-    const detailView = document.createElement("div");
-    detailView.id = "details";
-    detailView.className = "detail-view";
-    //document.querySelector('main').appendChild(detailView);
-    //document.querySelector(".menu-section").appendChild(detailView);
-    contenedor.appendChild(detailView);
+    // const mybutton = document.getElementById("myBtn");
+    // const contenedor = document.getElementById("menu-section");
+    // const menuItems = document.querySelectorAll(".menu-item");
+    // const detailView = document.createElement("div");
+    // detailView.id = "details";
+    // detailView.className = "detail-view";
+    // //document.querySelector('main').appendChild(detailView);
+    // //document.querySelector(".menu-section").appendChild(detailView);
+    // contenedor.appendChild(detailView);
 
-    if (
-      [
-        "bebidas",
-        "Rapido_Sabroso/bebidas",
-        "Menu-Cumen-Truck/bebidas",
-        "about",
-      ].some((path) => window.location.pathname.includes(path))
-    ) {
-    } else if (
-      ["index", "Cumen-Truck", "Rapido_Sabroso"].some((path) =>
-        window.location.pathname.includes(path)
-      )
-    ) {
-      menuItems.forEach((item, index) => {
-        item.addEventListener("click", () => {
-          // Calcular la posición del artículo
-          const rect = item.getBoundingClientRect();
-          const positionX = rect.left + window.scrollX;
-          const positionY = rect.top + window.scrollY;
-          console.log(item);
+    // if (
+    //   [
+    //     "bebidas",
+    //     "Rapido_Sabroso/bebidas",
+    //     "Menu-Cumen-Truck/bebidas",
+    //     "about",
+    //   ].some((path) => window.location.pathname.includes(path))
+    // ) {
+    // } else if (
+    //   ["index", "Rapido_Sabroso"].some((path) =>
+    //     window.location.pathname.includes(path)
+    //   )
+    // ) {
+    //   menuItems.forEach((item, index) => {
+    //     item.addEventListener("click", () => {
+    //       // Calcular la posición del artículo
+    //       const rect = item.getBoundingClientRect();
+    //       const positionX = rect.left + window.scrollX;
+    //       const positionY = rect.top + window.scrollY;
+    //       console.log(item);
 
-          // Establecer el estilo de `detailView` para que coincida
-          detailView.style.left = `${positionX}px`;
-          detailView.style.top = `${positionY}px`;
-          detailView.style.width = `${rect.width}px`; // Mantener el ancho del artículo
-          detailView.style.height = `${rect.height}px`; // Mantener la altura del artículo
-          detailView.style.transform = "scale(0)";
-          // Forzar un reflow para registrar el estado inicial
-          detailView.offsetHeight;
+    //       // Establecer el estilo de `detailView` para que coincida
+    //       detailView.style.left = `${positionX}px`;
+    //       detailView.style.top = `${positionY}px`;
+    //       detailView.style.width = `${rect.width}px`; // Mantener el ancho del artículo
+    //       detailView.style.height = `${rect.height}px`; // Mantener la altura del artículo
+    //       detailView.style.transform = "scale(0)";
+    //       // Forzar un reflow para registrar el estado inicial
+    //       detailView.offsetHeight;
 
-          const itemid = document.getElementById(item.id);
-          //itemid.classList.add('hidden');
-          let menuItemsArray = Array.from(menuItems);
-          menuItemsArray.forEach((menuclass) => {
-            if (menuclass.classList.contains("hidden")) {
-              detailView.classList.remove("active");
-              menuclass.classList.remove("hidden"); // Mostrar el elemento
-            } //else {
-            //itemid.classList.add('hidden'); // Ocultar el elemento
-            //}
-          });
-          itemid.classList.add("hidden");
+    //       const itemid = document.getElementById(item.id);
+    //       //itemid.classList.add('hidden');
+    //       let menuItemsArray = Array.from(menuItems);
+    //       menuItemsArray.forEach((menuclass) => {
+    //         if (menuclass.classList.contains("hidden")) {
+    //           detailView.classList.remove("active");
+    //           menuclass.classList.remove("hidden"); // Mostrar el elemento
+    //         } //else {
+    //         //itemid.classList.add('hidden'); // Ocultar el elemento
+    //         //}
+    //       });
+    //       itemid.classList.add("hidden");
 
-          setTimeout(() => {
-            item.ontransitionend = (evento) => {
-              if (
-                evento.propertyName === "transform" &&
-                item.classList.contains("hidden")
-              ) {
-                // Asegura que estamos escuchando transform
-                //if (classi == 'ok'){
-                detailView.classList.add("active");
-                detailView.id = "details-" + item.id;
-                //lalalala(detailView);
-                detailView.style.transform = "scale(1)";
-                //}
-              }
-            };
-          }, 300);
+    //       setTimeout(() => {
+    //         item.ontransitionend = (evento) => {
+    //           if (
+    //             evento.propertyName === "transform" &&
+    //             item.classList.contains("hidden")
+    //           ) {
+    //             // Asegura que estamos escuchando transform
+    //             //if (classi == 'ok'){
+    //             detailView.classList.add("active");
+    //             detailView.id = "details-" + item.id;
+    //             //lalalala(detailView);
+    //             detailView.style.transform = "scale(1)";
+    //             //}
+    //           }
+    //         };
+    //       }, 300);
 
-          // Mostrar información detallada
-          const detailContent = `
-                    <img src="Imagenes/logo-transparente.avif" alt="" id="FondoImg" class="FondoImg">
-                    <div class="descContent">
-                        <h2>${item.querySelector("h3").textContent}</h2>
-                        <!-- <p>${
-                          item.querySelector("p:not(.price)").textContent
-                        }</p> -->
-                        <video autoplay muted loop>
-                            <!-- <source src="Imagenes/Chori-Burguer/chori-burguer.webm" type="video/mp4"> -->
-                        </video>
-                        <div class="descripcion">
-                            <!-- <p name="text" id="descr" class="descripcion"></p> -->
-                            <p id="descr"></p>
-                        </div>
-                        <h1>${item.querySelector(".price").textContent}</h1>
-                    </div>
-                    <!-- <button class="back-button"><img src="Imagenes/close.webp" alt="" id="btnClose" class="btnClose"></button> -->
-                    <div class="back-button"><button id="btnClose" class="btnClose"></button></div>
-                    <div class="play-button"><button title="play" id="btnPlay" class="btnPlay" onclick="leerTexto()"></button></div>
-                    <!-- <button onclick="leerTexto()">Leer texto</button> -->
-                `;
-          detailView.innerHTML = detailContent;
-          var lklk = item.querySelector(".price");
-          // Ejemplo de uso
-          (async () => {
-            const descripcion = await buscarDescripcion2(
-              lklk.id.toLowerCase(),
-              "descripciones",
-              "descripciones"
-            );
-            const AreaDescription = document.querySelector("#descr");
-            AreaDescription.textContent = descripcion;
-          })();
-          const video = document.querySelector("video");
-          const string = item.id;
-          const numero = string.match(/\d+/);
-          video.src = "Videos/" + numero[0] + ".webm";
-          //video.src = 'Videos/' + numero[0] + '.mp4';
-          video.type = "video/mp4";
-          video.autoplay = true;
-          video.muted = true;
-          video.loop = true;
-          video.play();
-          // Manejar el botón "Volver"
-          //const backButton = detailView.querySelector('.back-button');
-          const backButton = detailView.querySelector(".btnClose");
-          backButton.addEventListener("click", () => {
-            if (esTransform(detailView) > 0) {
-              detailView.style.transform = "scale(0)";
-            } else {
-              detailView.style.transform = "scale(1)";
-            }
-            detailView.classList.replace("active", "final");
-            setTimeout(() => {
-              detailView.ontransitionend = (evento) => {
-                if (
-                  evento.propertyName === "transform" &&
-                  detailView.classList.contains("final")
-                ) {
-                  // Asegura que estamos escuchando transform
-                  detailView.classList.remove("final");
-                  detailView.innerHTML = ""; // Limpia el contenido
-                  item.classList.remove("hidden"); // Vuelve a mostrar el elemento
-                }
-              };
-            }, 300);
-          });
-        });
-      });
-    } //else if (['bebidas', 'Cumen-Truck/bebidas'].some(path => window.location.pathname.includes(path))) {
+    //       // Mostrar información detallada
+    //       const detailContent = `
+    //                 <img src="Imagenes/logo-transparente.avif" alt="" id="FondoImg" class="FondoImg">
+    //                 <div class="descContent">
+    //                     <h2>${item.querySelector("h3").textContent}</h2>
+    //                     <!-- <p>${
+    //                       item.querySelector("p:not(.price)").textContent
+    //                     }</p> -->
+    //                     <video autoplay muted loop>
+    //                         <!-- <source src="Imagenes/Chori-Burguer/chori-burguer.webm" type="video/mp4"> -->
+    //                     </video>
+    //                     <div class="descripcion">
+    //                         <!-- <p name="text" id="descr" class="descripcion"></p> -->
+    //                         <p id="descr"></p>
+    //                     </div>
+    //                     <h1>${item.querySelector(".price").textContent}</h1>
+    //                 </div>
+    //                 <!-- <button class="back-button"><img src="Imagenes/close.webp" alt="" id="btnClose" class="btnClose"></button> -->
+    //                 <div class="back-button"><button id="btnClose" class="btnClose"></button></div>
+    //                 <div class="play-button"><button title="play" id="btnPlay" class="btnPlay" onclick="leerTexto()"></button></div>
+    //                 <!-- <button onclick="leerTexto()">Leer texto</button> -->
+    //             `;
+    //       detailView.innerHTML = detailContent;
+    //       var lklk = item.querySelector(".price");
+    //       // Ejemplo de uso
+    //       (async () => {
+    //         const descripcion = await buscarDescripcion2(
+    //           lklk.id.toLowerCase(),
+    //           "descripciones",
+    //           "descripciones"
+    //         );
+    //         const AreaDescription = document.querySelector("#descr");
+    //         AreaDescription.textContent = descripcion;
+    //       })();
+    //       const video = document.querySelector("video");
+    //       const string = item.id;
+    //       const numero = string.match(/\d+/);
+    //       video.src = "Videos/" + numero[0] + ".webm";
+    //       //video.src = 'Videos/' + numero[0] + '.mp4';
+    //       video.type = "video/mp4";
+    //       video.autoplay = true;
+    //       video.muted = true;
+    //       video.loop = true;
+    //       video.play();
+    //       // Manejar el botón "Volver"
+    //       //const backButton = detailView.querySelector('.back-button');
+    //       const backButton = detailView.querySelector(".btnClose");
+    //       backButton.addEventListener("click", () => {
+    //         if (esTransform(detailView) > 0) {
+    //           detailView.style.transform = "scale(0)";
+    //         } else {
+    //           detailView.style.transform = "scale(1)";
+    //         }
+    //         detailView.classList.replace("active", "final");
+    //         setTimeout(() => {
+    //           detailView.ontransitionend = (evento) => {
+    //             if (
+    //               evento.propertyName === "transform" &&
+    //               detailView.classList.contains("final")
+    //             ) {
+    //               // Asegura que estamos escuchando transform
+    //               detailView.classList.remove("final");
+    //               detailView.innerHTML = ""; // Limpia el contenido
+    //               item.classList.remove("hidden"); // Vuelve a mostrar el elemento
+    //             }
+    //           };
+    //         }, 300);
+    //       });
+    //     });
+    //   });
+    // } //else if (['bebidas', 'Cumen-Truck/bebidas'].some(path => window.location.pathname.includes(path))) {
     //
+    //cargarProductos();
     //}
     //
   }
@@ -525,8 +540,155 @@ async function cargarProductos() {
 
     // 🔹 luego de crear los items, cargamos precios e imágenes extra
     cargarImg();
+    //CargaPrecios();
+    inicializarDetalleMobile();
     CargaPrecios();
   } catch (error) {
     console.error("Error cargando productos:", error);
+  }
+}
+
+function inicializarDetalleMobile() {
+  if (!esMovil()) return;
+
+  const contenedor = document.getElementById("menu-section");
+  const menuItems = document.querySelectorAll(".menu-item");
+  const detailView = document.createElement("div");
+  detailView.id = "details";
+  detailView.className = "detail-view";
+  //document.querySelector('main').appendChild(detailView);
+  //document.querySelector(".menu-section").appendChild(detailView);
+  contenedor.appendChild(detailView);
+
+  if (
+    [
+      "bebidas",
+      "Rapido_Sabroso/bebidas",
+      "Menu-Cumen-Truck/bebidas",
+      "about",
+    ].some((path) => window.location.pathname.includes(path))
+  ) {
+  } else if (
+    ["index", "Rapido_Sabroso"].some((path) =>
+      window.location.pathname.includes(path)
+    )
+  ) {
+    menuItems.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        // Calcular la posición del artículo
+        const rect = item.getBoundingClientRect();
+        const positionX = rect.left + window.scrollX;
+        const positionY = rect.top + window.scrollY;
+        //console.log(item);
+
+        // Establecer el estilo de `detailView` para que coincida
+        detailView.style.left = `${positionX}px`;
+        detailView.style.top = `${positionY}px`;
+        detailView.style.width = `${rect.width}px`; // Mantener el ancho del artículo
+        detailView.style.height = `${rect.height}px`; // Mantener la altura del artículo
+        detailView.style.transform = "scale(0)";
+        // Forzar un reflow para registrar el estado inicial
+        detailView.offsetHeight;
+
+        const itemid = document.getElementById(item.id);
+        //itemid.classList.add('hidden');
+        let menuItemsArray = Array.from(menuItems);
+        menuItemsArray.forEach((menuclass) => {
+          if (menuclass.classList.contains("hidden")) {
+            detailView.classList.remove("active");
+            menuclass.classList.remove("hidden"); // Mostrar el elemento
+          } //else {
+          //itemid.classList.add('hidden'); // Ocultar el elemento
+          //}
+        });
+        itemid.classList.add("hidden");
+
+        setTimeout(() => {
+          item.ontransitionend = (evento) => {
+            if (
+              evento.propertyName === "transform" &&
+              item.classList.contains("hidden")
+            ) {
+              // Asegura que estamos escuchando transform
+              //if (classi == 'ok'){
+              detailView.classList.add("active");
+              detailView.id = "details-" + item.id;
+              //lalalala(detailView);
+              detailView.style.transform = "scale(1)";
+              //}
+            }
+          };
+        }, 300);
+
+        // Mostrar información detallada
+        const detailContent = `
+                    <img src="Imagenes/logo-transparente.avif" alt="" id="FondoImg" class="FondoImg">
+                    <div class="descContent">
+                        <h2>${item.querySelector("h3").textContent}</h2>
+                        <!-- <p>${
+                          item.querySelector("p:not(.price)").textContent
+                        }</p> -->
+                        <video autoplay muted loop>
+                            <!-- <source src="Imagenes/Chori-Burguer/chori-burguer.webm" type="video/mp4"> -->
+                        </video>
+                        <div class="descripcion">
+                            <!-- <p name="text" id="descr" class="descripcion"></p> -->
+                            <p id="descr"></p>
+                        </div>
+                        <h1>${item.querySelector(".price").textContent}</h1>
+                    </div>
+                    <!-- <button class="back-button"><img src="Imagenes/close.webp" alt="" id="btnClose" class="btnClose"></button> -->
+                    <div class="back-button"><button id="btnClose" class="btnClose"></button></div>
+                    <div class="play-button"><button title="play" id="btnPlay" class="btnPlay" onclick="leerTexto()"></button></div>
+                    <!-- <button onclick="leerTexto()">Leer texto</button> -->
+                `;
+        detailView.innerHTML = detailContent;
+        var lklk = item.querySelector(".price");
+        // Ejemplo de uso
+        (async () => {
+          const descripcion = await buscarDescripcion2(
+            lklk.id.toLowerCase(),
+            "descripciones",
+            "descripciones"
+          );
+          const AreaDescription = document.querySelector("#descr");
+          AreaDescription.textContent = descripcion;
+        })();
+        const video = document.querySelector("video");
+        const string = item.id;
+        const numero = string.match(/\d+/);
+        video.src = "Videos/" + numero[0] + ".webm";
+        //video.src = 'Videos/' + numero[0] + '.mp4';
+        video.type = "video/mp4";
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.play();
+        // Manejar el botón "Volver"
+        //const backButton = detailView.querySelector('.back-button');
+        const backButton = detailView.querySelector(".btnClose");
+        backButton.addEventListener("click", () => {
+          if (esTransform(detailView) > 0) {
+            detailView.style.transform = "scale(0)";
+          } else {
+            detailView.style.transform = "scale(1)";
+          }
+          detailView.classList.replace("active", "final");
+          setTimeout(() => {
+            detailView.ontransitionend = (evento) => {
+              if (
+                evento.propertyName === "transform" &&
+                detailView.classList.contains("final")
+              ) {
+                // Asegura que estamos escuchando transform
+                detailView.classList.remove("final");
+                detailView.innerHTML = ""; // Limpia el contenido
+                item.classList.remove("hidden"); // Vuelve a mostrar el elemento
+              }
+            };
+          }, 300);
+        });
+      });
+    });
   }
 }

@@ -232,7 +232,8 @@
   }
   .descContent h1 {
     position: absolute;
-    color: #333;
+    /* color: #333; */
+    color: #fff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     text-shadow: 1px 2px 1px rgba(75, 75, 75, 0.6);
@@ -270,6 +271,8 @@
     vertical-align: middle;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+    color: #ff8924;
+    -webkit-text-stroke: 0.5px #66391e;
     /* text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6); */
     /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.5); */
   }
