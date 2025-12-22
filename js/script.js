@@ -17,10 +17,10 @@ window.onload = function () {
 //Definimos la funcion que agrega los titulos a los componentes
 function Titulos() {
   if (instagram.onmouseover) {
-    instagram.title = 'Visitar página de Instagram de "Cumen Truck"';
+    instagram.title = 'Visitar página de Instagram de "Rápido y Sabroso"';
   }
   if (facebook.onmouseover) {
-    facebook.title = 'Visitar página de Facebook de "Cumen Truck"';
+    facebook.title = 'Visitar página de Facebook de "Rápido y Sabroso"';
   }
 }
 //definimos la funcion para crear un nuevo div por cada item del menu
@@ -115,7 +115,7 @@ if (plataforma.includes("Win")) {
       }
     });
     if (
-      ["index", "Cumen-Truck", "Menu-Cumen-Truck", "bebidas", "about"].some(
+      ["index", "Rapido-Sabroso", "Rapido_Sabroso", "bebidas", "about"].some(
         (path) => window.location.pathname.includes(path)
       )
     ) {
@@ -197,7 +197,11 @@ let classi = "";
 //al cargar el documento
 document.addEventListener("DOMContentLoaded", () => {
   //cargarImg();
-  if (["index"].some((path) => window.location.pathname.includes(path))) {
+  if (
+    ["index", "Rapido_Sabroso/index", "Rapido-Sabroso/index"].some((path) =>
+      window.location.pathname.includes(path)
+    )
+  ) {
     cargarProductos();
   }
   const price = document.querySelectorAll(".price");
@@ -565,11 +569,13 @@ function inicializarDetalleMobile() {
       "bebidas",
       "Rapido_Sabroso/bebidas",
       "Menu-Cumen-Truck/bebidas",
+      "Rapido-Sabroso",
+      "Rapido_Sabroso",
       "about",
     ].some((path) => window.location.pathname.includes(path))
   ) {
   } else if (
-    ["index", "Rapido_Sabroso"].some((path) =>
+    ["index", "Rapido_Sabroso", "Rapido-Sabroso"].some((path) =>
       window.location.pathname.includes(path)
     )
   ) {

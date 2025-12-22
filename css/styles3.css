@@ -244,7 +244,7 @@ footer a:hover {
   position: relative;
   border-radius: 50% 25% 25% 50%;
   background-color: transparent;
-  background-image: url("Imagenes/izquierda.avif");
+  background-image: url("../Imagenes/izquierda.avif");
   background-size: cover;
   /* border: 2px solid #ff6100; */
   border: 2px solid #b0110c;
@@ -275,19 +275,19 @@ footer a:hover {
 #toggleMobileView.active2 {
   position: absolute;
   display: flex;
-  background: #333333eb url("Imagenes/celu_1.avif") no-repeat center/cover;
+  background: #333333eb url("../Imagenes/celu_1.avif") no-repeat center/cover;
   visibility: visible;
   border: none;
   padding: 20px;
   opacity: 0.3;
 }
 #toggleMobileView.active2:hover {
-  background: #333333eb url("Imagenes/celu_2.avif") no-repeat center/cover;
+  background: #333333eb url("../Imagenes/celu_2.avif") no-repeat center/cover;
   opacity: 0.8;
 }
 .cabecera {
   position: relative;
-  background-image: url("Imagenes/logo-transparente.avif");
+  background-image: url("../Imagenes/logo-transparente.avif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -318,7 +318,7 @@ footer a:hover {
 }
 .close-btn {
   position: relative;
-  background-image: url("Imagenes/close.avif");
+  background-image: url("../Imagenes/close.avif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -412,7 +412,7 @@ footer a:hover {
   /* padding: 5px; */
   border: 1px solid #333;
   border-radius: 50px;
-  background: #333333eb url("Imagenes/top.avif") no-repeat center/cover;
+  background: #333333eb url("../Imagenes/top.avif") no-repeat center/cover;
   color: white;
   font-size: 18px;
   z-index: 10;
@@ -517,7 +517,7 @@ footer a:hover {
     /* padding: 5px; */
     border: 1px solid #333;
     border-radius: 50px;
-    background: #333333eb url("Imagenes/top.avif") no-repeat center/cover;
+    background: #333333eb url("../Imagenes/top.avif") no-repeat center/cover;
     color: white;
     font-size: 18px;
     z-index: 10;

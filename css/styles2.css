@@ -215,7 +215,7 @@ header p {
   position: relative;
   border-radius: 50% 25% 25% 50%;
   background-color: transparent;
-  background-image: url("Imagenes/izquierda.avif");
+  background-image: url("../Imagenes/izquierda.avif");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 20px;
@@ -251,19 +251,19 @@ footer a:hover {
 #toggleMobileView.active2 {
   position: absolute;
   display: flex;
-  background: #333333eb url("Imagenes/celu_1.avif") no-repeat center/cover;
+  background: #333333eb url("../Imagenes/celu_1.avif") no-repeat center/cover;
   visibility: visible;
   border: none;
   padding: 20px;
   opacity: 0.3;
 }
 #toggleMobileView.active2:hover {
-  background: #333333eb url("Imagenes/celu_2.avif") no-repeat center/cover;
+  background: #333333eb url("../Imagenes/celu_2.avif") no-repeat center/cover;
   opacity: 0.8;
 }
 .cabecera {
   position: relative;
-  background-image: url("Imagenes/logo-transparente.avif");
+  background-image: url("../Imagenes/logo-transparente.avif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -294,7 +294,7 @@ footer a:hover {
 }
 .close-btn {
   position: relative;
-  background-image: url("Imagenes/close.avif");
+  background-image: url("../Imagenes/close.avif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -458,7 +458,7 @@ footer a:hover {
     position: relative;
     border-radius: 50% 25% 25% 50%;
     background-color: transparent;
-    background-image: url("Imagenes/izquierda.avif");
+    background-image: url("../Imagenes/izquierda.avif");
     background-size: cover;
     background-repeat: no-repeat;
     padding: 20px;
@@ -472,7 +472,7 @@ footer a:hover {
     border: 1px solid #333;
     outline: none;
     background-color: #333333eb;
-    background-image: url("Imagenes/top.avif");
+    background-image: url("../Imagenes/top.avif");
     background-size: cover;
     color: white;
     cursor: pointer;
@@ -559,19 +559,19 @@ footer a:hover {
   #toggleMobileView.active2 {
     position: absolute;
     display: flex;
-    background: #333333eb url("Imagenes/celu_1.avif") no-repeat center/cover;
+    background: #333333eb url("../Imagenes/celu_1.avif") no-repeat center/cover;
     visibility: visible;
     border: none;
     padding: 20px;
     opacity: 0.3;
   }
   #toggleMobileView.active2:hover {
-    background: #333333eb url("Imagenes/celu_2.avif") no-repeat center/cover;
+    background: #333333eb url("../Imagenes/celu_2.avif") no-repeat center/cover;
     opacity: 0.8;
   }
   .cabecera {
     position: relative;
-    background-image: url("Imagenes/logo-transparente.avif");
+    background-image: url("../Imagenes/logo-transparente.avif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -602,7 +602,7 @@ footer a:hover {
   }
   .close-btn {
     position: relative;
-    background-image: url("Imagenes/close.avif");
+    background-image: url("../Imagenes/close.avif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
