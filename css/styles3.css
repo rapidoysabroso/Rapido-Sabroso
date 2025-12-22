@@ -14,7 +14,8 @@ body {
 header {
   height: 132px;
   /* background-image: radial-gradient(#ffb931, #ff6100); */
-  background-image: linear-gradient(180deg, #b0110cc9, #000000d4);
+  /* background-image: linear-gradient(180deg, #b0110cc9, #000000d4); */
+  background-image: radial-gradient(#b0110c, #000);
   /* color: #c1ff72; */
   color: #ff8924;
   text-align: center;
@@ -33,7 +34,7 @@ header {
   justify-content: center;
   z-index: 5;
   /* opacity: 0.8; */
-  animation: heartbeat2 1.5s ease-in-out 4;
+  animation: heartbeat2 1.5s ease-in-out 3;
 }
 
 .logo img {

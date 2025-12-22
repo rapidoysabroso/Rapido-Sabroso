@@ -174,7 +174,7 @@
     flex-direction: column;
     visibility: hidden;
     position: absolute;
-    background-image: url("Imagenes/fondo-img.avif");
+    background-image: url("../Imagenes/fondo-img.avif");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 5px;
@@ -184,7 +184,7 @@
     z-index: 5;
   }
   .detail-view.active {
-    background-image: url("Imagenes/fondo-img.avif");
+    background-image: url("../Imagenes/fondo-img.avif");
     background-size: cover;
     background-repeat: no-repeat;
     display: inline-flex;
@@ -324,7 +324,7 @@
     background-color: #333333eb;
     border: 1px solid #333;
     border-radius: 50%;
-    background-image: url("Imagenes/close.avif");
+    background-image: url("../Imagenes/close.avif");
     background-size: cover;
     /* width: 100%; */
     /* height: 100%; */
@@ -362,7 +362,7 @@
     background-color: #333333eb;
     border: 1px solid #333;
     border-radius: 50%;
-    background-image: url("Imagenes/play.avif");
+    background-image: url("../Imagenes/play.avif");
     background-size: cover;
     /* width: 100%; */
     /* height: 100%; */
@@ -381,7 +381,7 @@
         background-image: url('Imagenes/pause.webp');
     } */
   .play-button .btnPlay.stop {
-    background-image: url("Imagenes/stop.avif");
+    background-image: url("../Imagenes/stop.avif");
   }
   .play-button {
     position: absolute;
@@ -489,7 +489,7 @@
     padding: 20px;
     border: 1px solid #333;
     border-radius: 50px;
-    background: #333333eb url("Imagenes/top.avif") no-repeat center/cover;
+    background: #333333eb url("../Imagenes/top.avif") no-repeat center/cover;
     color: white;
     font-size: 18px;
     z-index: 10;
@@ -523,14 +523,14 @@
   #toggleMobileView.active2 {
     position: absolute;
     display: flex;
-    background: #333333eb url("Imagenes/celu_1.avif") no-repeat center/cover;
+    background: #333333eb url("../Imagenes/celu_1.avif") no-repeat center/cover;
     visibility: visible;
     border: none;
     padding: 20px;
     opacity: 0.3;
   }
   #toggleMobileView.active2:hover {
-    background: #333333eb url("Imagenes/celu_2.avif") no-repeat center/cover;
+    background: #333333eb url("../Imagenes/celu_2.avif") no-repeat center/cover;
     opacity: 0.8;
   }
   video {
@@ -549,7 +549,7 @@
   }
   .cabecera {
     position: relative;
-    background-image: url("Imagenes/logo-transparente.avif");
+    background-image: url("../Imagenes/logo-transparente.avif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -580,7 +580,7 @@
   }
   .close-btn {
     position: relative;
-    background-image: url("Imagenes/close.avif");
+    background-image: url("../Imagenes/close.avif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

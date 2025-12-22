@@ -13,7 +13,6 @@ const plataforma = navigator.userAgent;
 window.onload = function () {
   metaContent.content = ContMeta;
 };
-//document.body.onload = cargarImg;
 //Definimos la funcion que agrega los titulos a los componentes
 function Titulos() {
   if (instagram.onmouseover) {
@@ -194,16 +193,36 @@ function esMovil() {
 }
 let elemID = "";
 let classi = "";
+const path = window.location.pathname.toLowerCase();
+const esBebidas = path.includes("/bebidas");
+const esHome =
+  path.endsWith("/") ||
+  path.endsWith("/index.html") ||
+  path.includes("rapido_sabroso") ||
+  path.includes("rapido-sabroso");
 //al cargar el documento
 document.addEventListener("DOMContentLoaded", () => {
-  //cargarImg();
-  if (
-    ["index", "Rapido_Sabroso/index", "Rapido-Sabroso/index"].some((path) =>
-      window.location.pathname.includes(path)
-    )
-  ) {
-    cargarProductos();
+  if (esBebidas) {
+    cargarBebidas();
+    //console.log("bebidas");
+  } else if (esHome) {
+    cargarProductos("comida");
+    //console.log("home o index");
   }
+  // if (
+  //   ["index", "Rapido_Sabroso", "Rapido-Sabroso"].some((path) =>
+  //     window.location.pathname.includes(path)
+  //   )
+  // ) {
+  //   cargarProductos("comida");
+  // } else if (
+  //   ["bebidas", "Rapido_Sabroso/bebidas", "Rapido-Sabroso/bebidas"].some(
+  //     (path) => window.location.pathname.includes(path)
+  //   )
+  // ) {
+  //   //cargarProductos("bebida");
+  //   cargarBebidas();
+  // }
   const price = document.querySelectorAll(".price");
   price.forEach((element) => {
     (async () => {
@@ -232,7 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
 
   if (esMovil()) {
-    console.log("es movil");
     if (window.location.pathname.includes("about")) {
       //
     } else {
@@ -418,8 +436,6 @@ function esTransform(ele) {
   } else {
     resultado = 0;
   }
-  //console.log(resultado);
-  //console.log(`ScaleX: ${escalaX}, ScaleY: ${escalaY}`);
   return resultado;
 }
 // Función para cargar el archivo JSON
@@ -476,7 +492,6 @@ function CargaAbout() {
 }
 //funcion que oculta o expande el menu segun scroll
 function menuVisible2() {
-  //const menu = document.querySelector(".menu");
   if (
     document.body.scrollTop > 100 ||
     document.documentElement.scrollTop > 100
@@ -495,7 +510,6 @@ function menuVisible2() {
     }
   }
 }
-//const menuItems = document.querySelectorAll('.menu-item');
 
 function sisi() {
   const menuItems = document.querySelectorAll(".menu-item");
@@ -516,7 +530,137 @@ function sisi() {
   });
 }
 
-async function cargarProductos() {
+//let contenedor;
+async function cargarProductos(tipoPermitido = "comida") {
+  const contenedor = document.getElementById("menu-section");
+  contenedor.innerHTML = ""; // limpieza por seguridad
+
+  try {
+    const res = await fetch("assets/productos.json");
+    const data = await res.json();
+
+    const productosFiltrados = data.productos.filter(
+      (prod) => prod.tipo === tipoPermitido
+    );
+
+    productosFiltrados.forEach((prod, index) => {
+      const article = document.createElement("article");
+      article.className = "menu-item";
+      article.id = `logo-item${index}`;
+
+      article.innerHTML = `
+        ${
+          prod.imagenes.principal
+            ? `
+          <img src="Imagenes/${prod.carpeta}/${prod.imagenes.principal}" 
+               class="${prod.id}" id="${prod.id}" fetchpriority="high">
+        `
+            : ""
+        }
+
+        <img src="Imagenes/fondo-img.avif" class="FondoImg">
+
+        <img src="Imagenes/${prod.carpeta}/${prod.imagenes.item}" class="Img1">
+
+        ${
+          prod.imagenes.texto
+            ? `
+          <img src="Imagenes/${prod.carpeta}/${prod.imagenes.texto}" class="Img2">
+        `
+            : ""
+        }
+
+        <h3>${prod.titulo}</h3>
+        ${prod.descripcion ? `<p>${prod.descripcion}</p>` : ""}
+        <p class="price" id="${prod.id}"></p>
+      `;
+
+      contenedor.appendChild(article);
+    });
+
+    cargarImg();
+    inicializarDetalleMobile();
+    CargaPrecios();
+  } catch (error) {
+    console.error("Error cargando productos:", error);
+  }
+}
+
+async function cargarBebidas() {
+  const contenedor = document.getElementById("menu-section1");
+  if (!contenedor) return;
+
+  contenedor.innerHTML = "";
+
+  try {
+    const res = await fetch("assets/productos.json");
+    const data = await res.json();
+
+    const bebidas = data.productos.filter((p) => p.tipo === "bebida");
+
+    bebidas.forEach((prod) => {
+      const div = document.createElement("div");
+      div.className = "menu-item";
+      div.id = prod.id;
+
+      div.innerHTML = `
+        <h3>${prod.titulo}</h3>
+
+        <img
+          src="Imagenes/fondo-img.avif"
+          class="FondoImg"
+          id="FondoImg"
+          alt=""
+        />
+
+        <img
+          src="Imagenes/${prod.carpeta}/${prod.imagenes.item}"
+          class="Img1"
+          id="Img1"
+          alt=""
+        />
+
+        <p class="price" id="${prod.precio_id}"></p>
+      `;
+
+      contenedor.appendChild(div);
+    });
+
+    // reutilizás todo lo que ya tenés
+    CargaPrecios();
+    inicializarImagenesBebidas();
+    invertirFondos();
+  } catch (error) {
+    console.error("Error cargando bebidas:", error);
+  }
+}
+
+function inicializarImagenesBebidas() {
+  const itemsMenu2 = document.querySelectorAll(".menu-item");
+
+  itemsMenu2.forEach((item) => {
+    const nuevoDiv = document.createElement("div");
+    nuevoDiv.className = "imagenes";
+
+    const img1 = item.querySelector(".Img1");
+    const price = item.querySelector(".price");
+
+    if (img1) nuevoDiv.appendChild(img1);
+    if (price) item.insertBefore(nuevoDiv, price);
+  });
+}
+
+function invertirFondos() {
+  const fondos = document.querySelectorAll(".FondoImg");
+
+  fondos.forEach((item, index) => {
+    if (index % 2 === 0 && fondos[index + 1]) {
+      fondos[index + 1].style.transform = "scaleX(-1)";
+    }
+  });
+}
+
+async function cargarProductos2() {
   const contenedor = document.getElementById("menu-section");
 
   try {
@@ -544,7 +688,6 @@ async function cargarProductos() {
 
     // 🔹 luego de crear los items, cargamos precios e imágenes extra
     cargarImg();
-    //CargaPrecios();
     inicializarDetalleMobile();
     CargaPrecios();
   } catch (error) {
@@ -560,8 +703,6 @@ function inicializarDetalleMobile() {
   const detailView = document.createElement("div");
   detailView.id = "details";
   detailView.className = "detail-view";
-  //document.querySelector('main').appendChild(detailView);
-  //document.querySelector(".menu-section").appendChild(detailView);
   contenedor.appendChild(detailView);
 
   if (
@@ -569,15 +710,15 @@ function inicializarDetalleMobile() {
       "bebidas",
       "Rapido_Sabroso/bebidas",
       "Menu-Cumen-Truck/bebidas",
-      "Rapido-Sabroso",
-      "Rapido_Sabroso",
+
       "about",
     ].some((path) => window.location.pathname.includes(path))
   ) {
   } else if (
-    ["index", "Rapido_Sabroso", "Rapido-Sabroso"].some((path) =>
-      window.location.pathname.includes(path)
-    )
+    esHome
+    // ["index", "Rapido_Sabroso", "Rapido-Sabroso"].some((path) =>
+    //   window.location.pathname.includes(path)
+    // )
   ) {
     menuItems.forEach((item, index) => {
       item.addEventListener("click", () => {
@@ -585,7 +726,6 @@ function inicializarDetalleMobile() {
         const rect = item.getBoundingClientRect();
         const positionX = rect.left + window.scrollX;
         const positionY = rect.top + window.scrollY;
-        //console.log(item);
 
         // Establecer el estilo de `detailView` para que coincida
         detailView.style.left = `${positionX}px`;
@@ -597,15 +737,12 @@ function inicializarDetalleMobile() {
         detailView.offsetHeight;
 
         const itemid = document.getElementById(item.id);
-        //itemid.classList.add('hidden');
         let menuItemsArray = Array.from(menuItems);
         menuItemsArray.forEach((menuclass) => {
           if (menuclass.classList.contains("hidden")) {
             detailView.classList.remove("active");
             menuclass.classList.remove("hidden"); // Mostrar el elemento
-          } //else {
-          //itemid.classList.add('hidden'); // Ocultar el elemento
-          //}
+          }
         });
         itemid.classList.add("hidden");
 
@@ -616,12 +753,9 @@ function inicializarDetalleMobile() {
               item.classList.contains("hidden")
             ) {
               // Asegura que estamos escuchando transform
-              //if (classi == 'ok'){
               detailView.classList.add("active");
               detailView.id = "details-" + item.id;
-              //lalalala(detailView);
               detailView.style.transform = "scale(1)";
-              //}
             }
           };
         }, 300);
@@ -664,14 +798,12 @@ function inicializarDetalleMobile() {
         const string = item.id;
         const numero = string.match(/\d+/);
         video.src = "Videos/" + numero[0] + ".webm";
-        //video.src = 'Videos/' + numero[0] + '.mp4';
         video.type = "video/mp4";
         video.autoplay = true;
         video.muted = true;
         video.loop = true;
         video.play();
         // Manejar el botón "Volver"
-        //const backButton = detailView.querySelector('.back-button');
         const backButton = detailView.querySelector(".btnClose");
         backButton.addEventListener("click", () => {
           if (esTransform(detailView) > 0) {

@@ -2,6 +2,7 @@
     "productos": [
         {
             "id": "Vacuna",
+            "tipo": "comida",
             "titulo": "Sanguche Vacuna",
             "descripcion": "Milanesa de carne vacuna, Jamón, Queso, Lechuga y Tomate.",
             "carpeta": "Vacuna",
@@ -13,6 +14,7 @@
         },
         {
             "id": "Pollo",
+            "tipo": "comida",
             "titulo": "Sanguche Pollo",
             "descripcion": "Milanesa de Pollo, Jamón, Queso, Lechuga y Tomate.",
             "carpeta": "Pollo",
@@ -24,6 +26,7 @@
         },
         {
             "id": "Merluza",
+            "tipo": "comida",
             "titulo": "Sanguche Merluza",
             "descripcion": "Milanesa de Merluza, Jamón, Queso, Lechuga y Tomate.",
             "carpeta": "Merluza",
@@ -35,6 +38,7 @@
         },
         {
             "id": "Pancho",
+            "tipo": "comida",
             "titulo": "Pancho",
             "descripcion": "Pan pancho y salchicha.",
             "carpeta": "Pancho",
@@ -46,6 +50,7 @@
         },
         {
             "id": "Fritas",
+            "tipo": "comida",
             "titulo": "Cono Fritas",
             "descripcion": "Cono de Papas Fritas.",
             "carpeta": "Fritas",
@@ -53,6 +58,106 @@
                 "principal": "fritas-completa.avif",
                 "item": "fritas.avif",
                 "texto": "textos-fritas.avif"
+            }
+        },
+        {
+            "id": "coke",
+            "tipo": "bebida",
+            "titulo": "Coca Cola",
+            "carpeta": "bebidas",
+            "precio_id": "gaseosa",
+            "imagenes": {
+                "item": "coca.avif"
+            }
+        },
+        {
+            "id": "coke-zero",
+            "tipo": "bebida",
+            "titulo": "Coca Cola Zero",
+            "carpeta": "bebidas",
+            "precio_id": "gaseosa",
+            "imagenes": {
+                "item": "zero.avif"
+            }
+        },
+        {
+            "id": "sprite",
+            "tipo": "bebida",
+            "titulo": "Sprite",
+            "carpeta": "bebidas",
+            "precio_id": "gaseosa",
+            "imagenes": {
+                "item": "sprite.avif"
+            }
+        },
+        {
+            "id": "fanta",
+            "tipo": "bebida",
+            "titulo": "Fanta",
+            "carpeta": "bebidas",
+            "precio_id": "gaseosa",
+            "imagenes": {
+                "item": "fanta.avif"
+            }
+        },
+        {
+            "id": "pomelo",
+            "tipo": "bebida",
+            "titulo": "Aquarius Pomelo",
+            "carpeta": "bebidas",
+            "precio_id": "saborizada",
+            "imagenes": {
+                "item": "pomelo.avif"
+            }
+        },
+        {
+            "id": "naranja",
+            "tipo": "bebida",
+            "titulo": "Aquarius Naranja",
+            "carpeta": "bebidas",
+            "precio_id": "saborizada",
+            "imagenes": {
+                "item": "naranja.avif"
+            }
+        },
+        {
+            "id": "pera",
+            "tipo": "bebida",
+            "titulo": "Aquarius Pera",
+            "carpeta": "bebidas",
+            "precio_id": "saborizada",
+            "imagenes": {
+                "item": "pera.avif"
+            }
+        },
+        {
+            "id": "manzana",
+            "tipo": "bebida",
+            "titulo": "Aquarius Manzana",
+            "carpeta": "bebidas",
+            "precio_id": "saborizada",
+            "imagenes": {
+                "item": "manzana.avif"
+            }
+        },
+        {
+            "id": "agua",
+            "tipo": "bebida",
+            "titulo": "Agua Mineral s/g",
+            "carpeta": "bebidas",
+            "precio_id": "agua",
+            "imagenes": {
+                "item": "agua.avif"
+            }
+        },
+        {
+            "id": "cerveza",
+            "tipo": "bebida",
+            "titulo": "Cervezas Lata",
+            "carpeta": "bebidas",
+            "precio_id": "cerveza",
+            "imagenes": {
+                "item": "cerveza.avif"
             }
         }
     ]
