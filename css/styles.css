@@ -10,7 +10,7 @@ body {
 header {
   height: 132px;
   /* background-image: radial-gradient(#ffb931, #ff6100); */
-  background-image: radial-gradient(#b0110c, #000);
+  background-image: radial-gradient(#b0110c 30%, #000 100%);
   /* color: #c1ff72; */
   color: #ff8924;
   text-align: center;
