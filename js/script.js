@@ -1,6 +1,7 @@
 //const imgsocial = document.querySelector('#ImgSocial');
 const facebook = document.querySelector("#Facebook");
 const instagram = document.querySelector("#Instagram");
+const ubicacion = document.querySelector("#Ubicacion");
 //const price = document.querySelectorAll(".price");
 const page = document.querySelector("#page a");
 const metaContent = document.querySelector('meta[name="description"]');
@@ -20,6 +21,9 @@ function Titulos() {
   }
   if (facebook.onmouseover) {
     facebook.title = 'Visitar página de Facebook de "Rápido y Sabroso"';
+  }
+  if (ubicacion.onmouseover) {
+    ubicacion.title = 'Visitar nuestra ubicación en Google Maps"';
   }
 }
 //definimos la funcion para crear un nuevo div por cada item del menu
