@@ -101,6 +101,16 @@
             }
         },
         {
+            "id": "coke15",
+            "tipo": "bebida",
+            "titulo": "Gaseosas 1.5 Lts",
+            "carpeta": "bebidas",
+            "precio_id": "gaseosa15",
+            "imagenes": {
+                "item": "gaseosa-1.5.avif"
+            }
+        },
+        {
             "id": "pomelo",
             "tipo": "bebida",
             "titulo": "Aquarius Pomelo",
@@ -158,6 +168,16 @@
             "precio_id": "cerveza",
             "imagenes": {
                 "item": "cerveza.avif"
+            }
+        },
+        {
+            "id": "hopkin",
+            "tipo": "bebida",
+            "titulo": "Cervezas Artesanal",
+            "carpeta": "bebidas",
+            "precio_id": "hopkin",
+            "imagenes": {
+                "item": "hopkin.avif"
             }
         }
     ]

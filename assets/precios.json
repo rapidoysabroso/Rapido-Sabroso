@@ -6,8 +6,10 @@
 		"pancho": "6000",
 		"fritas": "6000",
 		"gaseosa": "5000",
+		"gaseosa15": "10000",
 		"saborizada": "4000",
 		"agua": "3500",
-		"cerveza": "5000"
+		"cerveza": "5000",
+		"hopkin": "10000"
 	}
 }
