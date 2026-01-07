@@ -174,7 +174,7 @@ main {
 }
 .nodo-img-item img {
   position: relative;
-  width: 20%;
+  width: 16%;
   animation: heartbeat 1.5s ease-in-out 5;
 }
 

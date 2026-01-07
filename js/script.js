@@ -635,6 +635,7 @@ async function cargarBebidas() {
     });
 
     // reutilizás todo lo que ya tenés
+    cargarImg();
     CargaPrecios();
     inicializarImagenesBebidas();
     invertirFondos();
