@@ -456,12 +456,18 @@ async function cargarBebidas() {
       `;
 
       contenedor.appendChild(div);
+      const elTexto = div.querySelector("h3");
+      const elPrecio = div.querySelector("p");
+
       const imgProducto = div.querySelector(".Img1");
       imgProducto.addEventListener("click", () => {
+        console.log(elTexto);
+        console.log(elPrecio);
+        //elPrecio.classList.remove("price");
         if (imagenExpandida) {
           cerrarImagen();
         } else {
-          expandirImagenUnica(imgProducto);
+          expandirImagenUnica(imgProducto, elTexto, elPrecio);
         }
       });
     });
@@ -702,26 +708,44 @@ function cargarMetaDescription(
 
 function cerrarImagenesAlScroll() {
   window.addEventListener("scroll", () => {
-    const imgExpandida = document.querySelector(".img-expandida");
-    if (imgExpandida) {
-      imgExpandida.classList.remove("img-expandida");
-      imagenExpandida = false;
+    if (imagenExpandida) {
+      cerrarImagen();
     }
+    // const imgExpandida = document.querySelector(".img-expandida");
+    // if (imgExpandida) {
+    //   imgExpandida.classList.remove("img-expandida");
+    //   imagenExpandida = false;
+    // }
   });
 }
 
-function expandirImagenUnica(img) {
+function expandirImagenUnica(img, texto, precio) {
   const actual = document.querySelector(".img-expandida");
+  const actualTexto = document.querySelector("h3");
+  const actualPrice = document.querySelector("p");
 
   if (actual && actual !== img) {
     actual.classList.remove("img-expandida");
   }
+  if (actualTexto && actualTexto !== texto) {
+    actualTexto.classList.remove("texto-expandido");
+  }
+  if (actualPrice && actualPrice !== texto) {
+    actualPrice.classList.remove("p-expandido");
+  }
 
   img.classList.add("img-expandida");
+  texto.classList.add("texto-expandido");
+  precio.classList.remove(".price");
+  precio.classList.add("p-expandido");
   imagenExpandida = true;
 }
 function cerrarImagen() {
   const img = document.querySelector(".img-expandida");
+  const texto = document.querySelector(".texto-expandido");
+  const precio = document.querySelector(".p-expandido");
   if (img) img.classList.remove("img-expandida");
+  if (texto) texto.classList.remove("texto-expandido");
+  if (precio) precio.classList.remove("p-expandido");
   imagenExpandida = false;
 }
