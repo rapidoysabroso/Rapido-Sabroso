@@ -4,16 +4,17 @@ const instagram = document.querySelector("#Instagram");
 const ubicacion = document.querySelector("#Ubicacion");
 //const price = document.querySelectorAll(".price");
 const page = document.querySelector("#page a");
-const metaContent = document.querySelector('meta[name="description"]');
-const ContMeta =
-  "Cumen Truck ofrece una deliciosa variedad de comidas rápidas, incluyendo hamburguesas, tacos y panchos, elaborados con ingredientes frescos y de calidad. Disfruta de opciones como la Hamburguesa de Cordero con cebolla caramelizada y alioli, o el Taco Veggie con verduras salteadas, todo a precios accesibles. ¡El buen sabor te espera en Cumen Truck!";
+//const metaContent = document.querySelector('meta[name="description"]');
+//const ContMeta =
+//"Cumen Truck ofrece una deliciosa variedad de comidas rápidas, incluyendo hamburguesas, tacos y panchos, elaborados con ingredientes frescos y de calidad. Disfruta de opciones como la Hamburguesa de Cordero con cebolla caramelizada y alioli, o el Taco Veggie con verduras salteadas, todo a precios accesibles. ¡El buen sabor te espera en Cumen Truck!";
 //definimos constante plataforma
 const plataforma = navigator.userAgent;
 
 //definimos la funcion onload
-window.onload = function () {
-  metaContent.content = ContMeta;
-};
+//window.onload = function () {
+//metaContent.content = ContMeta;
+//cargarMetaDescription();
+//};
 //Definimos la funcion que agrega los titulos a los componentes
 function Titulos() {
   if (instagram.onmouseover) {
@@ -208,9 +209,11 @@ const esHome =
 document.addEventListener("DOMContentLoaded", () => {
   if (esBebidas) {
     cargarBebidas();
+    cargarMetaDescription("assets/descripciones.json", "bebidas");
     //console.log("bebidas");
   } else if (esHome) {
     cargarProductos("comida");
+    cargarMetaDescription("assets/descripciones.json", "index");
     //console.log("home o index");
   }
   // if (
@@ -482,7 +485,8 @@ function CargaAbout() {
     //cargamos la imagen si es WINDOWS en una resolucion de 2K
     //const urlAbout = 'https://drive.google.com/thumbnail?id=1jtZBdlz_Pzj1W_RU5xWxLn_-8CWtZBUB&sz=w2000';
     const urlAbout =
-      "https://drive.google.com/thumbnail?id=1UfPrutLsxYQr52bRgDICUiTtRvd07ylU&sz=w1280";
+      "https://lh3.googleusercontent.com/d/1fl28fxt32upUwGDsodLgYaIfL-LtKJm-=w1280?authuser=0";
+    //"https://drive.google.com/thumbnail?id=1UfPrutLsxYQr52bRgDICUiTtRvd07ylU&sz=w1280";
     imgabout.style.backgroundSize = "cover";
     imgabout.style.backgroundRepeat = "no-repeat";
     if (plataforma.includes("Android")) {
@@ -833,4 +837,32 @@ function inicializarDetalleMobile() {
       });
     });
   }
+}
+
+/**
+ * Carga el meta description desde un archivo JSON
+ * @param {string} jsonPath - Ruta al archivo JSON
+ * @param {string} defaultPage - Página por defecto (ej: "index")
+ */
+
+function cargarMetaDescription(
+  jsonPath = "assets/descripciones.json",
+  defaultPage = "index"
+) {
+  const metaTag = document.querySelector('meta[name="description"]');
+  if (!metaTag) return;
+
+  let page = window.location.pathname.split("/").pop().replace(".html", "");
+  if (!page) page = defaultPage;
+
+  fetch(jsonPath)
+    .then((res) => res.json())
+    .then((meta) => {
+      if (meta.descripciones[page]) {
+        metaTag.setAttribute("content", meta.descripciones[page]);
+      }
+    })
+    .catch((err) => {
+      console.error("Error cargando meta description:", err);
+    });
 }

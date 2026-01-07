@@ -174,7 +174,9 @@ header p {
     margin-top: 20px;
 } */
 .content h2 {
-  color: #444;
+  /* color: #444; */
+  color: #ff8924;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
 /* #equipo {
     display: flex;
@@ -193,7 +195,9 @@ header p {
 }
 .info a {
   text-decoration: none;
-  color: #444;
+  /* color: #444; */
+  color: #ff8924;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
 }
 .info p {
   color: #fff;
@@ -517,7 +521,8 @@ footer a:hover {
   .info a {
     width: 100%;
     text-decoration: none;
-    color: #444;
+    /* color: #444; */
+    color: #ff8924;
   }
   .info p {
     padding: 0;
