@@ -1,13 +1,13 @@
 {
 	"precios": {
-		"vacuna": "7000",
-		"merluza": "10000",
-		"pollo": "6000",
+		"vacuna": "20000",
+		"merluza": "15000",
+		"pollo": "12000",
 		"pancho": "6000",
 		"fritas": "6000",
 		"gaseosa": "5000",
 		"saborizada": "4000",
 		"agua": "3500",
-		"cerveza": "3500"
+		"cerveza": "5000"
 	}
 }
