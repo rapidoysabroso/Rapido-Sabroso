@@ -193,7 +193,17 @@ main {
   z-index: 2;
   background-size: cover;
 }
-
+.img-expandida {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%) scale(1.1); */
+  transform: translate(-50%, -50%) scale(0.4);
+  animation: zoomCentro 0.8s ease-out forwards;
+  z-index: 9999;
+  max-width: 90vw;
+  max-height: 90vh;
+}
 .menu-item h3 {
   position: relative;
   color: #fff;
