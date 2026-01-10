@@ -644,7 +644,12 @@ function inicializarDetalleMobile() {
         const video = document.querySelector("video");
         const string = item.id;
         const numero = string.match(/\d+/);
-        video.src = "Videos/" + numero[0] + ".webm";
+        if (video.canPlayType("video/webm; codecs=vp8,vorbis")) {
+          video.src = `Videos/${numero}.webm`;
+        } else if (video.canPlayType("video/mp4")) {
+          video.src = `Videos/${numero}.mp4`;
+        }
+        //video.src = "Videos/" + numero[0] + ".webm";
         video.type = "video/mp4";
         video.autoplay = true;
         video.muted = true;

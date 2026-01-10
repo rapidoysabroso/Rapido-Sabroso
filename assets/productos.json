@@ -4,7 +4,7 @@
             "id": "Vacuna",
             "tipo": "comida",
             "titulo": "Sanguche Vacuna",
-            "descripcion": "Milanesa de carne vacuna, Jamón, Queso, Lechuga y Tomate.",
+            "descripcion": "Milanesa de carne vacuna, Jamón, Queso, Lechuga, Tomate y Huevo.",
             "carpeta": "Vacuna",
             "imagenes": {
                 "principal": "vacuna-completa.avif",
@@ -16,7 +16,7 @@
             "id": "Pollo",
             "tipo": "comida",
             "titulo": "Sanguche Pollo",
-            "descripcion": "Milanesa de Pollo, Jamón, Queso, Lechuga y Tomate.",
+            "descripcion": "Milanesa de Pollo, Jamón, Queso, Lechuga, Tomate y Huevo.",
             "carpeta": "Pollo",
             "imagenes": {
                 "principal": "pollo-completa.avif",
@@ -28,12 +28,24 @@
             "id": "Merluza",
             "tipo": "comida",
             "titulo": "Sanguche Merluza",
-            "descripcion": "Milanesa de Merluza, Jamón, Queso, Lechuga y Tomate.",
+            "descripcion": "Milanesa de Merluza, Jamón, Queso, Lechuga, Tomate y Huevo.",
             "carpeta": "Merluza",
             "imagenes": {
                 "principal": "merluza-completa.avif",
                 "item": "merluza.avif",
                 "texto": "textos-merluza.avif"
+            }
+        },
+        {
+            "id": "Bondiola",
+            "tipo": "comida",
+            "titulo": "Sanguche Bondiola",
+            "descripcion": "Sandwich de Bondiola, Verduras salteadas, Queso Cheddar, Panceta Ahumada y Huevo.!",
+            "carpeta": "Bondiola",
+            "imagenes": {
+                "principal": "bondiola-completa.avif",
+                "item": "bondiola.avif",
+                "texto": "textos-bondiola.avif"
             }
         },
         {

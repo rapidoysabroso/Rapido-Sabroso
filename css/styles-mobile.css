@@ -271,7 +271,8 @@
     vertical-align: middle;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    color: #ff8924;
+    /* color: #ff8924; */
+    color: #fff;
     -webkit-text-stroke: 0.5px #66391e;
     /* text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6); */
     /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.5); */
@@ -429,7 +430,8 @@
   .menu-item .Pollo,
   .menu-item .Merluza,
   .menu-item .Pancho,
-  .menu-item .Fritas {
+  .menu-item .Fritas,
+  .menu-item .Bondiola {
     display: none;
   }
   .menu-item .FondoImg {
