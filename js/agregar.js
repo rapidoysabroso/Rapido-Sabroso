@@ -2,7 +2,7 @@
 
 const API_BASE = window.API_BASE || "https://rapido-sabroso.onrender.com";
 
-const TOKEN_STORAGE_KEY = "editorToken";
+const TOKEN_STORAGE_KEY = "editor_token";
 
 /* =========================
    ELEMENTOS
@@ -470,12 +470,40 @@ formProducto.addEventListener("submit", async function (event) {
    MODAL
 ========================= */
 
-function mostrarModal(titulo, texto) {
+// function mostrarModal(titulo, texto) {
+//   modalTitulo.textContent = titulo;
+
+//   modalTexto.textContent = texto;
+
+//   modalMensaje.classList.add("mostrar");
+// }
+
+function mostrarModal(titulo, texto, exito = false) {
   modalTitulo.textContent = titulo;
 
   modalTexto.textContent = texto;
 
+  const icono = document.getElementById("modalIcono");
+
+  if (exito) {
+    icono.textContent = "✓";
+
+    icono.style.background = "#22c55e";
+  } else {
+    icono.textContent = "!";
+
+    icono.style.background = "#ef4444";
+  }
+
   modalMensaje.classList.add("mostrar");
+}
+
+function mostrarExito(titulo, texto) {
+  mostrarModal(titulo, texto, true);
+}
+
+function mostrarError(titulo, texto) {
+  mostrarModal(titulo, texto, false);
 }
 
 function cerrarModal() {
