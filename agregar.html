@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="Imagenes/favicon.avif" type="image/x-icon" />
+    <link rel="shortcut icon" href="Imagenes/favicon.avif" />
+
+    <title>Agregar producto - Rápido y Sabroso</title>
+
+    <link rel="stylesheet" href="css/agregar.css" />
+  </head>
+
+  <body>
+    <header id="jaja">
+      <div class="logo">
+        <img src="Imagenes/favicon.avif" alt="" id="Logo" />
+      </div>
+      <p>¡Street Food al estilo Nuestro!</p>
+      <div class="menu-container">
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Comidas</a></li>
+            <li><a href="bebidas.html">Bebidas</a></li>
+            <li><a href="about.html">Nosotros</a></li>
+            <li><a href="editar.html">Editar</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="loginSection" class="login-container oculto">
+      <div class="login-box">
+        <!-- <img
+          src="Imagenes/logo-transparente.avif"
+          alt="Rápido y Sabroso"
+          class="logo-login"
+        /> -->
+
+        <h1>Panel de edición</h1>
+
+        <p>Ingresá tus credenciales para continuar.</p>
+
+        <form id="loginForm">
+          <div class="campo">
+            <label for="usuario">Usuario</label>
+
+            <input type="text" id="usuario" autocomplete="username" required />
+          </div>
+
+          <div class="campo">
+            <label for="password">Contraseña</label>
+
+            <input
+              type="password"
+              id="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <button type="submit">Ingresar</button>
+
+          <p id="loginError" class="error"></p>
+        </form>
+      </div>
+    </section>
+
+    <main class="contenedor">
+      <header class="encabezado">
+        <div>
+          <h1>Agregar producto</h1>
+          <p>Rápido y Sabroso</p>
+        </div>
+
+        <button type="button" id="btnVolver" class="btn-volver">
+          ← Volver
+        </button>
+      </header>
+
+      <section class="formulario-container">
+        <form id="formProducto" novalidate>
+          <!-- DATOS PRINCIPALES -->
+          <div class="seccion">
+            <h2>Información del producto</h2>
+
+            <div class="campo">
+              <label for="nombre">
+                Nombre del producto
+                <span>*</span>
+              </label>
+
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ej: Hamburguesa completa"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <div class="campo">
+              <label for="descripcion"> Descripción </label>
+
+              <textarea
+                id="descripcion"
+                name="descripcion"
+                rows="4"
+                placeholder="Descripción del producto..."
+              ></textarea>
+            </div>
+
+            <div class="fila">
+              <div class="campo">
+                <label for="precio">
+                  Precio
+                  <span>*</span>
+                </label>
+
+                <div class="input-precio">
+                  <span>$</span>
+
+                  <input
+                    type="number"
+                    id="precio"
+                    name="precio"
+                    min="0"
+                    step="0.01"
+                    placeholder="0.00"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="campo">
+                <label for="categoria">
+                  Categoría
+                  <span>*</span>
+                </label>
+
+                <select id="categoria" name="categoria" required>
+                  <option value="">Seleccionar categoría</option>
+                  <option value="hamburguesas">Hamburguesas</option>
+                  <option value="pizzas">Pizzas</option>
+                  <option value="sandwiches">Sandwiches</option>
+                  <option value="papas">Papas</option>
+                  <option value="bebidas">Bebidas</option>
+                  <option value="postres">Postres</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- IMAGEN -->
+          <div class="seccion">
+            <h2>Imagen</h2>
+
+            <div class="imagen-container">
+              <div class="preview-container" id="previewContainer">
+                <div class="preview-vacio" id="previewVacio">
+                  <span>🖼️</span>
+                  <p>Vista previa</p>
+                </div>
+
+                <img
+                  id="previewImagen"
+                  class="preview-imagen"
+                  alt="Vista previa del producto"
+                />
+              </div>
+
+              <div class="imagen-controles">
+                <label for="imagen" class="btn-imagen">
+                  Seleccionar imagen
+                </label>
+
+                <input
+                  type="file"
+                  id="imagen"
+                  name="imagen"
+                  accept="image/*"
+                  hidden
+                />
+
+                <p id="nombreImagen" class="nombre-imagen">
+                  No se seleccionó ninguna imagen
+                </p>
+
+                <button
+                  type="button"
+                  id="btnEliminarImagen"
+                  class="btn-eliminar-imagen"
+                  hidden
+                >
+                  Eliminar imagen
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ESTADO -->
+          <div class="seccion">
+            <h2>Estado</h2>
+
+            <label class="switch-container">
+              <input type="checkbox" id="activo" name="activo" checked />
+
+              <span class="switch"></span>
+
+              <span class="switch-text"> Producto disponible </span>
+            </label>
+          </div>
+
+          <!-- BOTONES -->
+          <div class="acciones">
+            <button type="button" id="btnCancelar" class="btn btn-cancelar">
+              Cancelar
+            </button>
+
+            <button type="submit" class="btn btn-guardar">
+              <span>＋</span>
+              Agregar producto
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- MODAL DE MENSAJE -->
+    <div id="modalMensaje" class="modal">
+      <div class="modal-contenido">
+        <div id="modalIcono" class="modal-icono">✓</div>
+
+        <h2 id="modalTitulo">Producto preparado</h2>
+
+        <p id="modalTexto">Los datos fueron preparados correctamente.</p>
+
+        <button type="button" id="btnCerrarModal" class="btn btn-guardar">
+          Aceptar
+        </button>
+      </div>
+    </div>
+
+    <script src="js/agregar.js"></script>
+  </body>
+</html>
