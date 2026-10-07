@@ -2,6 +2,8 @@
 
 const API_BASE = window.API_BASE || "https://rapido-sabroso.onrender.com";
 
+const TOKEN_STORAGE_KEY = "editorToken";
+
 /* =========================
    ELEMENTOS
 ========================= */
