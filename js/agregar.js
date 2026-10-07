@@ -313,7 +313,7 @@ function crearFormData() {
 
   const tipo = categoria.value;
 
-  const carpeta = categoria.value;
+  const carpeta = nombreProducto;
 
   const formData = new FormData();
 
