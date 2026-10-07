@@ -214,6 +214,15 @@
             "imagenes": [
                 "prueba-completa.png"
             ]
+        },
+        {
+            "id": "ahora",
+            "titulo": "ahora",
+            "tipo": "otros",
+            "carpeta": "ahora",
+            "imagenes": [
+                "prueba-completa.png"
+            ]
         }
     ]
 }
