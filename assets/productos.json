@@ -191,6 +191,13 @@
             "imagenes": {
                 "item": "hopkin.avif"
             }
+        },
+        {
+            "id": "xbcbx",
+            "titulo": "xbcbx",
+            "tipo": "otros",
+            "carpeta": "otros",
+            "imagenes": []
         }
     ]
 }
