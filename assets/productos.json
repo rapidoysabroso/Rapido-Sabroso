@@ -205,6 +205,15 @@
             "tipo": "comida",
             "carpeta": "comida",
             "imagenes": []
+        },
+        {
+            "id": "pruebafoto",
+            "titulo": "pruebafoto",
+            "tipo": "comida",
+            "carpeta": "comida",
+            "imagenes": [
+                "prueba-completa.png"
+            ]
         }
     ]
 }
