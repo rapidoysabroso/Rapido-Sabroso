@@ -198,6 +198,13 @@
             "tipo": "otros",
             "carpeta": "otros",
             "imagenes": []
+        },
+        {
+            "id": "probamos",
+            "titulo": "probamos",
+            "tipo": "comida",
+            "carpeta": "comida",
+            "imagenes": []
         }
     ]
 }
