@@ -94,7 +94,8 @@ function obtenerToken() {
    * Primero buscamos la clave que usa el editor.
    */
 
-  let token = localStorage.getItem(TOKEN_STORAGE_KEY);
+  let token = sessionStorage.getItem(TOKEN_STORAGE_KEY);
+  console.log(token);
 
   /*
    * Fallback por si el login actual utiliza simplemente
@@ -102,7 +103,7 @@ function obtenerToken() {
    */
 
   if (!token) {
-    token = localStorage.getItem("token");
+    token = sessionStorage.getItem("token");
   }
 
   return token;
