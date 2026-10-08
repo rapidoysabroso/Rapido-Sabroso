@@ -160,44 +160,128 @@
             <h2>Imagen</h2>
 
             <div class="imagen-container">
-              <div class="preview-container" id="previewContainer">
-                <div class="preview-vacio" id="previewVacio">
-                  <span>🖼️</span>
-                  <p>Vista previa</p>
+              <div class="imgPrincipal">
+                <div class="preview-container" id="previewContainer">
+                  <div class="preview-vacio" id="previewVacio">
+                    <span>🖼️</span>
+                    <p>Vista previa</p>
+                  </div>
+
+                  <img
+                    id="previewImagen"
+                    class="preview-imagen"
+                    alt="Vista previa del producto"
+                  />
                 </div>
 
-                <img
-                  id="previewImagen"
-                  class="preview-imagen"
-                  alt="Vista previa del producto"
-                />
+                <div class="imagen-controles">
+                  <label for="imagen" class="btn-imagen">
+                    Seleccionar imagen
+                  </label>
+
+                  <input
+                    type="file"
+                    id="imagen"
+                    name="imagen"
+                    accept="image/avif,image/x-icon,image/webp,image/png,image/jpeg,image/gif"
+                    hidden
+                  />
+
+                  <p id="nombreImagen" class="nombre-imagen">
+                    No se seleccionó ninguna imagen
+                  </p>
+
+                  <button
+                    type="button"
+                    id="btnEliminarImagen"
+                    class="btn-eliminar-imagen"
+                    hidden
+                  >
+                    Eliminar imagen
+                  </button>
+                </div>
               </div>
+              <div class="imgItem">
+                <div class="preview-container" id="previewContainer">
+                  <div class="preview-vacio" id="previewVacio">
+                    <span>🖼️</span>
+                    <p>Vista previa</p>
+                  </div>
 
-              <div class="imagen-controles">
-                <label for="imagen" class="btn-imagen">
-                  Seleccionar imagen
-                </label>
+                  <img
+                    id="previewImagen"
+                    class="preview-imagen"
+                    alt="Vista previa del producto"
+                  />
+                </div>
 
-                <input
-                  type="file"
-                  id="imagen"
-                  name="imagen"
-                  accept="image/*"
-                  hidden
-                />
+                <div class="imagen-controles">
+                  <label for="imagen" class="btn-imagen">
+                    Seleccionar imagen
+                  </label>
 
-                <p id="nombreImagen" class="nombre-imagen">
-                  No se seleccionó ninguna imagen
-                </p>
+                  <input
+                    type="file"
+                    id="imagen"
+                    name="imagen"
+                    accept="image/avif,image/x-icon,image/webp,image/png,image/jpeg,image/gif"
+                    hidden
+                  />
 
-                <button
-                  type="button"
-                  id="btnEliminarImagen"
-                  class="btn-eliminar-imagen"
-                  hidden
-                >
-                  Eliminar imagen
-                </button>
+                  <p id="nombreImagen" class="nombre-imagen">
+                    No se seleccionó ninguna imagen
+                  </p>
+
+                  <button
+                    type="button"
+                    id="btnEliminarImagen"
+                    class="btn-eliminar-imagen"
+                    hidden
+                  >
+                    Eliminar imagen
+                  </button>
+                </div>
+              </div>
+              <div class="imgTexto">
+                <div class="preview-container" id="previewContainer">
+                  <div class="preview-vacio" id="previewVacio">
+                    <span>🖼️</span>
+                    <p>Vista previa</p>
+                  </div>
+
+                  <img
+                    id="previewImagen"
+                    class="preview-imagen"
+                    alt="Vista previa del producto"
+                  />
+                </div>
+
+                <div class="imagen-controles">
+                  <label for="imagen" class="btn-imagen">
+                    Seleccionar imagen
+                  </label>
+
+                  <input
+                    type="file"
+                    id="imagen"
+                    name="imagen"
+                    accept="image/avif,image/x-icon,image/webp,image/png,image/jpeg,image/gif"
+                    hidden
+                  />
+
+                  <p id="nombreImagen" class="nombre-imagen">
+                    No se seleccionó ninguna imagen
+                  </p>
+
+                  <button
+                    type="button"
+                    id="btnEliminarImagen"
+                    class="btn-eliminar-imagen"
+                    hidden
+                  >
+                    Eliminar imagen
+                  </button>
+                </div>
               </div>
             </div>
           </div>
