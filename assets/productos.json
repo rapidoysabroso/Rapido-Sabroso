@@ -191,38 +191,6 @@
             "imagenes": {
                 "item": "hopkin.avif"
             }
-        },
-        {
-            "id": "xbcbx",
-            "titulo": "xbcbx",
-            "tipo": "otros",
-            "carpeta": "otros",
-            "imagenes": []
-        },
-        {
-            "id": "probamos",
-            "titulo": "probamos",
-            "tipo": "comida",
-            "carpeta": "comida",
-            "imagenes": []
-        },
-        {
-            "id": "pruebafoto",
-            "titulo": "pruebafoto",
-            "tipo": "comida",
-            "carpeta": "comida",
-            "imagenes": [
-                "prueba-completa.png"
-            ]
-        },
-        {
-            "id": "ahora",
-            "titulo": "ahora",
-            "tipo": "otros",
-            "carpeta": "ahora",
-            "imagenes": [
-                "prueba-completa.png"
-            ]
         }
     ]
 }
